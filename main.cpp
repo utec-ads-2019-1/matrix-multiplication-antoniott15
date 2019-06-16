@@ -5,7 +5,7 @@
 #include <pthread.h>
 #include <iostream>
 #include <sys/time.h>
-#define NUM_THREADS 2
+#define NUM_THREADS 2 // This should be the available threads in the computer
 
 struct CData
 {
@@ -143,6 +143,28 @@ int main(int argc, char *argv[])
     {
         pthread_join(workers[i], NULL);
     }
+
+    for (int i = 0; i < lines; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            std::cout << A[i][j] << "\t";
+        }
+        std::cout << "\n";
+    }
+
+     std::cout << std::endl << std::endl;
+
+    for (int i = 0; i < lines2; i++)
+    {
+        for (int j = 0; j < columns2; j++)
+        {
+            std::cout << B[i][j] << "\t";
+        }
+        std::cout << "\n";
+    }
+
+    std::cout << std::endl << std::endl;
 
     for (int i = 0; i < lines3; i++)
     {
